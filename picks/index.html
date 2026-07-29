@@ -16,20 +16,27 @@
   .sub{color:var(--mut);font-size:15px;margin:0}
   .note{margin:18px auto 0;max-width:1400px;background:#fff9ef;border:1px solid #ffe0b3;
         border-left:4px solid var(--amber);border-radius:10px;padding:12px 16px;font-size:14.5px}
+  .note ul{margin:8px 0 0;padding-left:20px}
+  .note li{margin:3px 0}
   main{padding:22px}
   .grouphead{display:flex;align-items:center;gap:10px;margin:26px 0 12px;font-weight:600;font-size:15px;
              letter-spacing:.04em;text-transform:uppercase;color:var(--mut)}
   .grouphead:before{content:"";flex:0 0 26px;height:2px;background:var(--teal);border-radius:2px}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(430px,1fr));gap:20px}
   .card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;
-        box-shadow:0 1px 3px rgba(16,42,67,.06)}
+        box-shadow:0 1px 3px rgba(16,42,67,.06);position:relative}
+  .card.new{border-color:#8fd4e0;box-shadow:0 2px 10px rgba(13,148,168,.14)}
   .card video{width:100%;display:block;background:#0b1620;aspect-ratio:16/9}
+  .badge{position:absolute;top:10px;left:10px;z-index:2;background:var(--teal);color:#fff;
+         font-size:11.5px;font-weight:700;letter-spacing:.06em;padding:3px 8px;border-radius:20px}
+  .badge.rec{background:var(--amber);color:#40260a}
   .meta{padding:12px 15px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
   .name{font-weight:650}
   .who{color:var(--mut);font-size:13.5px}
   .len{color:var(--mut);font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums}
   .dl{padding:0 15px 13px;font-size:13px}
   .dl a{color:var(--teal);text-decoration:none;border-bottom:1px solid #b8e2ea}
+  .old{opacity:.62}
   details{max-width:1400px;margin:30px auto 60px;background:#fff;border:1px solid var(--line);
           border-radius:12px;padding:14px 18px}
   summary{cursor:pointer;font-weight:600}
@@ -41,15 +48,21 @@
 <header>
   <div class="wrap">
     <h1>AImyAdvance — <span>AI Position Detection</span></h1>
-    <p class="sub">One feature, one script, one screen walkthrough — recorded six times so you can pick the presenter.</p>
+    <p class="sub">One feature, one script, one screen walkthrough — recorded ten ways so you can pick the presenter.</p>
   </div>
 </header>
 
 <div class="note">
-  <strong>All six are identical</strong> except the avatar and voice: same script, same on-screen
-  walkthrough (open the submission → Bank Summary → Debt Analysis → highlight the detected
-  positions, the totals, the leverage ratio, then expand position 1 for the payment history).
-  Pick your favourite and I'll use that avatar going forward.
+  <strong>New in this round (marked <em>NEW</em>):</strong>
+  <ul>
+    <li><strong>Elenora with the accent removed</strong> — two versions. <strong>F2a</strong> keeps her exact
+        voice but forces US English (closest to what you liked). <strong>F2b</strong> swaps in a different
+        American voice. Pick whichever sounds right; the original accented take is greyed out at the end.</li>
+    <li><strong>Two casual guys in t-shirts</strong> — Bryce and Jinwoo (M4, M5), no suits.</li>
+  </ul>
+  Everything else is identical across all of them: same script, same on-screen walkthrough
+  (open the submission → Bank Summary → Debt Analysis → highlight the detected positions, the
+  totals and the leverage ratio → expand position 1 for the payment history).
 </div>
 
 <main>
@@ -57,24 +70,52 @@
 
     <div class="grouphead">Female presenters</div>
     <div class="grid">
+      <div class="card new">
+        <span class="badge rec">NEW · accent removed</span>
+        <video src="AImyAdvance-PositionDetection-F2a-Elenora-enUS.mp4" controls preload="metadata" playsinline></video>
+        <div class="meta"><span><span class="name">F2a — Elenora</span> <span class="who">her voice, forced US English</span></span><span class="len">0:59</span></div>
+        <div class="dl"><a href="AImyAdvance-PositionDetection-F2a-Elenora-enUS.mp4" download>download</a></div>
+      </div>
+      <div class="card new">
+        <span class="badge">NEW · accent removed</span>
+        <video src="AImyAdvance-PositionDetection-F2b-Elenora-USvoice.mp4" controls preload="metadata" playsinline></video>
+        <div class="meta"><span><span class="name">F2b — Elenora</span> <span class="who">different American voice</span></span><span class="len">0:59</span></div>
+        <div class="dl"><a href="AImyAdvance-PositionDetection-F2b-Elenora-USvoice.mp4" download>download</a></div>
+      </div>
       <div class="card">
         <video src="AImyAdvance-PositionDetection-F1-Ann.mp4" controls preload="metadata" playsinline></video>
         <div class="meta"><span><span class="name">F1 — Ann</span> <span class="who">business, standing</span></span><span class="len">1:03</span></div>
         <div class="dl"><a href="AImyAdvance-PositionDetection-F1-Ann.mp4" download>download</a></div>
       </div>
       <div class="card">
-        <video src="AImyAdvance-PositionDetection-F2-Elenora.mp4" controls preload="metadata" playsinline></video>
-        <div class="meta"><span><span class="name">F2 — Elenora</span> <span class="who">suit</span></span><span class="len">1:02</span></div>
-        <div class="dl"><a href="AImyAdvance-PositionDetection-F2-Elenora.mp4" download>download</a></div>
-      </div>
-      <div class="card">
         <video src="AImyAdvance-PositionDetection-F3-Judy.mp4" controls preload="metadata" playsinline></video>
         <div class="meta"><span><span class="name">F3 — Judy</span> <span class="who">business</span></span><span class="len">1:00</span></div>
         <div class="dl"><a href="AImyAdvance-PositionDetection-F3-Judy.mp4" download>download</a></div>
       </div>
+      <div class="card old">
+        <video src="AImyAdvance-PositionDetection-F2-Elenora.mp4" controls preload="metadata" playsinline></video>
+        <div class="meta"><span><span class="name">F2 — Elenora (original)</span> <span class="who">superseded — this is the accented take</span></span><span class="len">1:02</span></div>
+        <div class="dl"><a href="AImyAdvance-PositionDetection-F2-Elenora.mp4" download>download</a></div>
+      </div>
     </div>
 
-    <div class="grouphead">Male presenters</div>
+    <div class="grouphead">Male presenters — casual (t-shirt)</div>
+    <div class="grid">
+      <div class="card new">
+        <span class="badge">NEW · t-shirt</span>
+        <video src="AImyAdvance-PositionDetection-M4-Bryce.mp4" controls preload="metadata" playsinline></video>
+        <div class="meta"><span><span class="name">M4 — Bryce</span> <span class="who">black t-shirt</span></span><span class="len">1:08</span></div>
+        <div class="dl"><a href="AImyAdvance-PositionDetection-M4-Bryce.mp4" download>download</a></div>
+      </div>
+      <div class="card new">
+        <span class="badge">NEW · t-shirt</span>
+        <video src="AImyAdvance-PositionDetection-M5-Jinwoo.mp4" controls preload="metadata" playsinline></video>
+        <div class="meta"><span><span class="name">M5 — Jinwoo</span> <span class="who">white t-shirt</span></span><span class="len">1:07</span></div>
+        <div class="dl"><a href="AImyAdvance-PositionDetection-M5-Jinwoo.mp4" download>download</a></div>
+      </div>
+    </div>
+
+    <div class="grouphead">Male presenters — suit</div>
     <div class="grid">
       <div class="card">
         <video src="AImyAdvance-PositionDetection-M1-Marcus.mp4" controls preload="metadata" playsinline></video>
@@ -94,7 +135,7 @@
     </div>
 
     <details>
-      <summary>Script used in all six (read verbatim)</summary>
+      <summary>Script used in all of them (read verbatim)</summary>
       <div class="script">Let me show you the feature underwriters say saves them the most time in AImyAdvance — AI Position Detection.
 
 Open any submission, go to Bank Summary, then Debt Analysis.
