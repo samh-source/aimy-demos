@@ -1,10 +1,12 @@
 import os, re
-files=sorted([f for f in os.listdir('.') if f.startswith('AImyAdvance-') and f.endswith('.mp4')])
+PREFIXES=('AImyAdvance-','AImyUnderwriting-')
+files=sorted([f for f in os.listdir('.') if f.startswith(PREFIXES) and f.endswith('.mp4')])
 # newest first by mtime
 files.sort(key=lambda f: os.path.getmtime(f), reverse=True)
 def title(f):
-    t=f.replace('AImyAdvance-','').replace('.mp4','').replace('-',' ')
-    return t
+    if f.startswith('AImyUnderwriting-'):
+        return 'Underwriting ' + f[len('AImyUnderwriting-'):].replace('.mp4','').replace('-',' ')
+    return f.replace('AImyAdvance-','').replace('.mp4','').replace('-',' ')
 cards="".join(f'''
   <div class="card"><h2>{title(f)}</h2>
     <video src="{f}" controls preload="none" playsinline></video>
